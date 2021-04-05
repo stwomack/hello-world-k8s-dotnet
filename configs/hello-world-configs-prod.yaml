@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helloworld-configs
+  namespace: prod
+data:
+  color: green
+  environment: prod
+  dbstring: "Data Source=MySqlServer\\MSSQL-PROD;"

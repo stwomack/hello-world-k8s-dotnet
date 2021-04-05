@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helloworld-configs
+  namespace: dev
+data:
+  color: purple
+  environment: dev
+  dbstring: "Data Source=MySqlServer\\MSSQL-DEV"

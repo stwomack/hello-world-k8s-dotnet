@@ -19,7 +19,7 @@ namespace hello_world_k8s_dotnet.Controllers
         }
 
         public IActionResult Index()
-        {
+        { 
             return View();
         }
 

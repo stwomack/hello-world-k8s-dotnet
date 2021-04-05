@@ -14,11 +14,14 @@ spec:
     spec:
       containers:
         - name: hello-world-k8s-dotnet
-          image: fjb4/hello-world-k8s-dotnet:latest
+          image: stwomack/dotnet:hello-world-k8s-dotnet
           imagePullPolicy: Always
           env:
             - name: PORT
               value: "8080"
+          envFrom:
+            - configMapRef:
+                name: helloworld-configs
           ports:
             - containerPort: 8080
 ---

@@ -1,8 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewData["Color"] = "white";
+    if(!String.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("color")))
+      ViewData["Color"] = System.Environment.GetEnvironmentVariable("color");
+    ViewData["Environment"] = "local";
+    if(!String.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("environment")))
+      ViewData["Environment"] = System.Environment.GetEnvironmentVariable("environment");
+    ViewData["DbString"] = "empty";
+    if(!String.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("dbstring")))
+      ViewData["Dbstring"] = System.Environment.GetEnvironmentVariable("dbstring");
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>This is a dotnet app.</p>
+    <p>My color is @ViewData["Color"]</p>
+    <p>My environment is @ViewData["Environment"]</p>
+    <p>My connection string is @ViewData["DbString"]</p>
 </div>
